@@ -5,40 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e35819f5-6d47-4375-ac58-62b2ae7aac6f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FS/Controllers/BaralhoController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FS/Controllers/BaralhoController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FS/Controllers/CartaController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FS/Controllers/CartaController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FS/Controllers/ItemController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FS/Controllers/ItemController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FS/Controllers/JogadorController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FS/Controllers/JogadorController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FS/Controllers/PartidaController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FS/Controllers/PartidaController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FS/Model/Baralho.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FS/Model/Baralho.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FS/Model/Carta.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FS/Model/Carta.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FS/Model/Item.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FS/Model/Item.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FS/Model/Jogador.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FS/Model/Jogador.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FS/Model/Partida.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FS/Model/Partida.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FS/TestBaralho.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FS/TestBaralho.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FS/TestCartas.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FS/TestCartas.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FS/TestItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FS/TestItem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FS/TestJogador.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FS/TestJogador.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FS/Login.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MultiplayerTCG/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MultiplayerTCG/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MultiplayerTCG/.idea/dataSources/a97e8ffc-c9c0-461f-8a8b-67d0ae3540a7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MultiplayerTCG/.idea/dataSources/a97e8ffc-c9c0-461f-8a8b-67d0ae3540a7.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MultiplayerTCG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MultiplayerTCG/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Server.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Server.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FS/Controllers/TipoController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FS/Controllers/TipoController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FS/NewConnectDB.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FS/NewConnectDB.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/JM/NewBehaviourScript.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,21 +29,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Standalone Player.Start Unity.executor": "Run",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Standalone Player.Start Unity.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Standalone Player.Start Unity">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="$USER_HOME$/Unity/Hub/Editor/2022.3.21f1/Editor/Unity" />
@@ -131,6 +101,7 @@
       <workItem from="1737977722227" duration="26991000" />
       <workItem from="1738065971846" duration="10259000" />
       <workItem from="1738147638170" duration="2508000" />
+      <workItem from="1740226287058" duration="5136000" />
     </task>
     <servers />
   </component>

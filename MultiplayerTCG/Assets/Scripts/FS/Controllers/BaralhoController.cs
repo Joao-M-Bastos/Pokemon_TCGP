@@ -30,7 +30,7 @@ public class BaralhoController : NewConnectDB
     public List<Baralho> GetBaralhos(int PlayerID)
     {
         List<Baralho> baralhos = new List<Baralho>();
-        string sql = "SELECT NOME, JOGADOR FROM BARALHO WHERE JOGADOR=@ID AND ATIVO=@ATIVO";
+        string sql = "SELECT COD, NOME, JOGADOR FROM BARALHO WHERE JOGADOR=@ID AND ATIVO=@ATIVO";
         SqlCommand cmd = new SqlCommand(sql, conectar());
 
         SqlParameter par = new SqlParameter("@ID", PlayerID);

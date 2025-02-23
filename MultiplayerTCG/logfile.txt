@@ -1,0 +1,397 @@
+Data e Hora: 22/02/2025 12:46:27
+Mensagem de Erro: Encoding 1252 data could not be found. Make sure you have correct international codeset assembly installed and enabled.
+Stack Trace:   at System.Text.Encoding.GetEncoding (System.Int32 codepage) [0x0022d] in <cd4cebb38d21460bba5fbd8c5903fca3>:0 
+  at System.Data.SqlClient.TdsParser.TryProcessEnvChange (System.Int32 tokenLength, System.Data.SqlClient.TdsParserStateObject stateObj, System.Data.SqlClient.SqlEnvChange[]& sqlEnvChange) [0x00246] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.TdsParser.TryRun (System.Data.SqlClient.RunBehavior runBehavior, System.Data.SqlClient.SqlCommand cmdHandler, System.Data.SqlClient.SqlDataReader dataStream, System.Data.SqlClient.BulkCopySimpleResultSet bulkCopyHandler, System.Data.SqlClient.TdsParserStateObject stateObj, System.Boolean& dataReady) [0x004f4] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.TdsParser.Run (System.Data.SqlClient.RunBehavior runBehavior, System.Data.SqlClient.SqlCommand cmdHandler, System.Data.SqlClient.SqlDataReader dataStream, System.Data.SqlClient.BulkCopySimpleResultSet bulkCopyHandler, System.Data.SqlClient.TdsParserStateObject stateObj) [0x00010] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin (System.Boolean enlistOK) [0x00000] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin (System.Data.SqlClient.ServerInfo serverInfo, System.String newPassword, System.Security.SecureString newSecurePassword, System.Boolean ignoreSniOpenTimeout, System.Data.ProviderBase.TimeoutTimer timeout, System.Boolean withFailover) [0x000a9] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover (System.Data.SqlClient.ServerInfo serverInfo, System.String newPassword, System.Security.SecureString newSecurePassword, System.Boolean redirectedUserInstance, System.Data.SqlClient.SqlConnectionString connectionOptions, System.Data.SqlClient.SqlCredential credential, System.Data.ProviderBase.TimeoutTimer timeout) [0x000c4] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist (System.Data.ProviderBase.TimeoutTimer timeout, System.Data.SqlClient.SqlConnectionString connectionOptions, System.Data.SqlClient.SqlCredential credential, System.String newPassword, System.Security.SecureString newSecurePassword, System.Boolean redirectedUserInstance) [0x000b9] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlInternalConnectionTds..ctor (System.Data.ProviderBase.DbConnectionPoolIdentity identity, System.Data.SqlClient.SqlConnectionString connectionOptions, System.Data.SqlClient.SqlCredential credential, System.Object providerInfo, System.String newPassword, System.Security.SecureString newSecurePassword, System.Boolean redirectedUserInstance, System.Data.SqlClient.SqlConnectionString userConnectionOptions, System.Data.SqlClient.SessionData reconnectSessionData, System.Boolean applyTransientFaultHandling, System.String accessToken) [0x00145] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnectionFactory.CreateConnection (System.Data.Common.DbConnectionOptions options, System.Data.Common.DbConnectionPoolKey poolKey, System.Object poolGroupProviderInfo, System.Data.ProviderBase.DbConnectionPool pool, System.Data.Common.DbConnection owningConnection, System.Data.Common.DbConnectionOptions userOptions) [0x00159] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection (System.Data.ProviderBase.DbConnectionPool pool, System.Data.Common.DbConnection owningObject, System.Data.Common.DbConnectionOptions options, System.Data.Common.DbConnectionPoolKey poolKey, System.Data.Common.DbConnectionOptions userOptions) [0x0000c] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.ProviderBase.DbConnectionPool.CreateObject (System.Data.Common.DbConnection owningObject, System.Data.Common.DbConnectionOptions userOptions, System.Data.ProviderBase.DbConnectionInternal oldConnection) [0x00184] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest (System.Data.Common.DbConnection owningObject, System.Data.Common.DbConnectionOptions userOptions, System.Data.ProviderBase.DbConnectionInternal oldConnection) [0x00040] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.ProviderBase.DbConnectionPool.TryGetConnection (System.Data.Common.DbConnection owningObject, System.UInt32 waitForMultipleObjectsTimeout, System.Boolean allowCreate, System.Boolean onlyOneCheckConnection, System.Data.Common.DbConnectionOptions userOptions, System.Data.ProviderBase.DbConnectionInternal& connection) [0x000a4] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.ProviderBase.DbConnectionPool.TryGetConnection (System.Data.Common.DbConnection owningObject, System.Threading.Tasks.TaskCompletionSource`1[TResult] retry, System.Data.Common.DbConnectionOptions userOptions, System.Data.ProviderBase.DbConnectionInternal& connection) [0x00026] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection (System.Data.Common.DbConnection owningConnection, System.Threading.Tasks.TaskCompletionSource`1[TResult] retry, System.Data.Common.DbConnectionOptions userOptions, System.Data.ProviderBase.DbConnectionInternal oldConnection, System.Data.ProviderBase.DbConnectionInternal& connection) [0x0021d] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal (System.Data.Common.DbConnection outerConnection, System.Data.ProviderBase.DbConnectionFactory connectionFactory, System.Threading.Tasks.TaskCompletionSource`1[TResult] retry, System.Data.Common.DbConnectionOptions userOptions) [0x00036] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection (System.Data.Common.DbConnection outerConnection, System.Data.ProviderBase.DbConnectionFactory connectionFactory, System.Threading.Tasks.TaskCompletionSource`1[TResult] retry, System.Data.Common.DbConnectionOptions userOptions) [0x00000] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnection.TryOpen (System.Threading.Tasks.TaskCompletionSource`1[TResult] retry) [0x0005d] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnection.Open () [0x0003b] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at NewConnectDB.conectar () [0x00014] in <00dd7337e9de4e71866095feb650c352>:0 
+--------------------------------------------------
+Data e Hora: 22/02/2025 12:46:27
+Mensagem de Erro: ExecuteReader: Connection property has not been initialized.
+Stack Trace:   at System.Data.SqlClient.SqlCommand.ValidateCommand (System.Boolean async, System.String method) [0x0000e] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.RunExecuteReader (System.Data.CommandBehavior cmdBehavior, System.Data.SqlClient.RunBehavior runBehavior, System.Boolean returnStream, System.Threading.Tasks.TaskCompletionSource`1[TResult] completion, System.Int32 timeout, System.Threading.Tasks.Task& task, System.Boolean asyncWrite, System.String method) [0x0001b] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.RunExecuteReader (System.Data.CommandBehavior cmdBehavior, System.Data.SqlClient.RunBehavior runBehavior, System.Boolean returnStream, System.String method) [0x0000b] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x0003c] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.ExecuteReader () [0x0000e] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SqlClient.SqlCommand.ExecuteReader()
+  at JogadorController.CheckPlayer (System.String usuario, System.String senha) [0x00087] in <00dd7337e9de4e71866095feb650c352>:0 
+  at Login.VerficarJogador (System.String usuario, System.String senha) [0x0000a] in <00dd7337e9de4e71866095feb650c352>:0 
+--------------------------------------------------
+Data e Hora: 22/02/2025 12:50:39
+Mensagem de Erro: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 35 - An internal exception was caught)
+A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 35 - An internal exception was caught)
+Stack Trace:   at System.Data.SqlClient.SqlInternalConnectionTds..ctor (System.Data.ProviderBase.DbConnectionPoolIdentity identity, System.Data.SqlClient.SqlConnectionString connectionOptions, System.Data.SqlClient.SqlCredential credential, System.Object providerInfo, System.String newPassword, System.Security.SecureString newSecurePassword, System.Boolean redirectedUserInstance, System.Data.SqlClient.SqlConnectionString userConnectionOptions, System.Data.SqlClient.SessionData reconnectSessionData, System.Boolean applyTransientFaultHandling, System.String accessToken) [0x0018b] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnectionFactory.CreateConnection (System.Data.Common.DbConnectionOptions options, System.Data.Common.DbConnectionPoolKey poolKey, System.Object poolGroupProviderInfo, System.Data.ProviderBase.DbConnectionPool pool, System.Data.Common.DbConnection owningConnection, System.Data.Common.DbConnectionOptions userOptions) [0x00159] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection (System.Data.ProviderBase.DbConnectionPool pool, System.Data.Common.DbConnection owningObject, System.Data.Common.DbConnectionOptions options, System.Data.Common.DbConnectionPoolKey poolKey, System.Data.Common.DbConnectionOptions userOptions) [0x0000c] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.ProviderBase.DbConnectionPool.CreateObject (System.Data.Common.DbConnection owningObject, System.Data.Common.DbConnectionOptions userOptions, System.Data.ProviderBase.DbConnectionInternal oldConnection) [0x00184] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest (System.Data.Common.DbConnection owningObject, System.Data.Common.DbConnectionOptions userOptions, System.Data.ProviderBase.DbConnectionInternal oldConnection) [0x00040] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.ProviderBase.DbConnectionPool.TryGetConnection (System.Data.Common.DbConnection owningObject, System.UInt32 waitForMultipleObjectsTimeout, System.Boolean allowCreate, System.Boolean onlyOneCheckConnection, System.Data.Common.DbConnectionOptions userOptions, System.Data.ProviderBase.DbConnectionInternal& connection) [0x000a4] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.ProviderBase.DbConnectionPool.TryGetConnection (System.Data.Common.DbConnection owningObject, System.Threading.Tasks.TaskCompletionSource`1[TResult] retry, System.Data.Common.DbConnectionOptions userOptions, System.Data.ProviderBase.DbConnectionInternal& connection) [0x00026] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection (System.Data.Common.DbConnection owningConnection, System.Threading.Tasks.TaskCompletionSource`1[TResult] retry, System.Data.Common.DbConnectionOptions userOptions, System.Data.ProviderBase.DbConnectionInternal oldConnection, System.Data.ProviderBase.DbConnectionInternal& connection) [0x0021d] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal (System.Data.Common.DbConnection outerConnection, System.Data.ProviderBase.DbConnectionFactory connectionFactory, System.Threading.Tasks.TaskCompletionSource`1[TResult] retry, System.Data.Common.DbConnectionOptions userOptions) [0x00036] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection (System.Data.Common.DbConnection outerConnection, System.Data.ProviderBase.DbConnectionFactory connectionFactory, System.Threading.Tasks.TaskCompletionSource`1[TResult] retry, System.Data.Common.DbConnectionOptions userOptions) [0x00000] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnection.TryOpen (System.Threading.Tasks.TaskCompletionSource`1[TResult] retry) [0x0005d] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnection.Open () [0x0003b] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at NewConnectDB.conectar () [0x00014] in <71f4d1bb84ef4d83bfc91111c5c8bdb0>:0 
+--------------------------------------------------
+Data e Hora: 22/02/2025 12:50:39
+Mensagem de Erro: ExecuteReader: Connection property has not been initialized.
+Stack Trace:   at System.Data.SqlClient.SqlCommand.ValidateCommand (System.Boolean async, System.String method) [0x0000e] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.RunExecuteReader (System.Data.CommandBehavior cmdBehavior, System.Data.SqlClient.RunBehavior runBehavior, System.Boolean returnStream, System.Threading.Tasks.TaskCompletionSource`1[TResult] completion, System.Int32 timeout, System.Threading.Tasks.Task& task, System.Boolean asyncWrite, System.String method) [0x0001b] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.RunExecuteReader (System.Data.CommandBehavior cmdBehavior, System.Data.SqlClient.RunBehavior runBehavior, System.Boolean returnStream, System.String method) [0x0000b] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x0003c] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.ExecuteReader () [0x0000e] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SqlClient.SqlCommand.ExecuteReader()
+  at JogadorController.CheckPlayer (System.String usuario, System.String senha) [0x00087] in <71f4d1bb84ef4d83bfc91111c5c8bdb0>:0 
+  at Login.VerficarJogador (System.String usuario, System.String senha) [0x0000a] in <71f4d1bb84ef4d83bfc91111c5c8bdb0>:0 
+--------------------------------------------------
+Data e Hora: 22/02/2025 12:51:46
+Mensagem de Erro: A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 35 - An internal exception was caught)
+A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 35 - An internal exception was caught)
+Stack Trace:   at System.Data.SqlClient.SqlInternalConnectionTds..ctor (System.Data.ProviderBase.DbConnectionPoolIdentity identity, System.Data.SqlClient.SqlConnectionString connectionOptions, System.Data.SqlClient.SqlCredential credential, System.Object providerInfo, System.String newPassword, System.Security.SecureString newSecurePassword, System.Boolean redirectedUserInstance, System.Data.SqlClient.SqlConnectionString userConnectionOptions, System.Data.SqlClient.SessionData reconnectSessionData, System.Boolean applyTransientFaultHandling, System.String accessToken) [0x0018b] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnectionFactory.CreateConnection (System.Data.Common.DbConnectionOptions options, System.Data.Common.DbConnectionPoolKey poolKey, System.Object poolGroupProviderInfo, System.Data.ProviderBase.DbConnectionPool pool, System.Data.Common.DbConnection owningConnection, System.Data.Common.DbConnectionOptions userOptions) [0x00159] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection (System.Data.ProviderBase.DbConnectionPool pool, System.Data.Common.DbConnection owningObject, System.Data.Common.DbConnectionOptions options, System.Data.Common.DbConnectionPoolKey poolKey, System.Data.Common.DbConnectionOptions userOptions) [0x0000c] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.ProviderBase.DbConnectionPool.CreateObject (System.Data.Common.DbConnection owningObject, System.Data.Common.DbConnectionOptions userOptions, System.Data.ProviderBase.DbConnectionInternal oldConnection) [0x00184] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest (System.Data.Common.DbConnection owningObject, System.Data.Common.DbConnectionOptions userOptions, System.Data.ProviderBase.DbConnectionInternal oldConnection) [0x00040] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.ProviderBase.DbConnectionPool.TryGetConnection (System.Data.Common.DbConnection owningObject, System.UInt32 waitForMultipleObjectsTimeout, System.Boolean allowCreate, System.Boolean onlyOneCheckConnection, System.Data.Common.DbConnectionOptions userOptions, System.Data.ProviderBase.DbConnectionInternal& connection) [0x000a4] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.ProviderBase.DbConnectionPool.TryGetConnection (System.Data.Common.DbConnection owningObject, System.Threading.Tasks.TaskCompletionSource`1[TResult] retry, System.Data.Common.DbConnectionOptions userOptions, System.Data.ProviderBase.DbConnectionInternal& connection) [0x00026] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection (System.Data.Common.DbConnection owningConnection, System.Threading.Tasks.TaskCompletionSource`1[TResult] retry, System.Data.Common.DbConnectionOptions userOptions, System.Data.ProviderBase.DbConnectionInternal oldConnection, System.Data.ProviderBase.DbConnectionInternal& connection) [0x0021d] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal (System.Data.Common.DbConnection outerConnection, System.Data.ProviderBase.DbConnectionFactory connectionFactory, System.Threading.Tasks.TaskCompletionSource`1[TResult] retry, System.Data.Common.DbConnectionOptions userOptions) [0x00036] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection (System.Data.Common.DbConnection outerConnection, System.Data.ProviderBase.DbConnectionFactory connectionFactory, System.Threading.Tasks.TaskCompletionSource`1[TResult] retry, System.Data.Common.DbConnectionOptions userOptions) [0x00000] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnection.TryOpen (System.Threading.Tasks.TaskCompletionSource`1[TResult] retry) [0x0005d] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnection.Open () [0x0003b] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at NewConnectDB.conectar () [0x00014] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/NewConnectDB.cs:38 
+--------------------------------------------------
+Data e Hora: 22/02/2025 12:51:46
+Mensagem de Erro: ExecuteReader: Connection property has not been initialized.
+Stack Trace:   at System.Data.SqlClient.SqlCommand.ValidateCommand (System.Boolean async, System.String method) [0x0000e] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.RunExecuteReader (System.Data.CommandBehavior cmdBehavior, System.Data.SqlClient.RunBehavior runBehavior, System.Boolean returnStream, System.Threading.Tasks.TaskCompletionSource`1[TResult] completion, System.Int32 timeout, System.Threading.Tasks.Task& task, System.Boolean asyncWrite, System.String method) [0x0001b] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.RunExecuteReader (System.Data.CommandBehavior cmdBehavior, System.Data.SqlClient.RunBehavior runBehavior, System.Boolean returnStream, System.String method) [0x0000b] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x0003c] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.ExecuteReader () [0x0000e] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SqlClient.SqlCommand.ExecuteReader()
+  at JogadorController.CheckPlayer (System.String usuario, System.String senha) [0x00087] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/Controllers/JogadorController.cs:41 
+  at Login.VerficarJogador (System.String usuario, System.String senha) [0x0000b] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/Login/Login.cs:52 
+--------------------------------------------------
+Data e Hora: 22/02/2025 14:35:55
+Erro ao conectar ao banco de dados: The connection was not closed. The connection's current state is open.
+Stack Trace:   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnection (System.Data.Common.DbConnection outerConnection, System.Data.ProviderBase.DbConnectionFactory connectionFactory, System.Threading.Tasks.TaskCompletionSource`1[TResult] retry, System.Data.Common.DbConnectionOptions userOptions) [0x0000b] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnection.TryOpen (System.Threading.Tasks.TaskCompletionSource`1[TResult] retry) [0x0005d] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnection.Open () [0x0003b] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at NewConnectDB.conectar () [0x00030] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/NewConnectDB.cs:36 
+--------------------------------------------------
+Data e Hora: 22/02/2025 14:35:55
+Mensagem de Erro: ExecuteReader: Connection property has not been initialized.
+Stack Trace:   at System.Data.SqlClient.SqlCommand.ValidateCommand (System.Boolean async, System.String method) [0x0000e] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.RunExecuteReader (System.Data.CommandBehavior cmdBehavior, System.Data.SqlClient.RunBehavior runBehavior, System.Boolean returnStream, System.Threading.Tasks.TaskCompletionSource`1[TResult] completion, System.Int32 timeout, System.Threading.Tasks.Task& task, System.Boolean asyncWrite, System.String method) [0x0001b] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.RunExecuteReader (System.Data.CommandBehavior cmdBehavior, System.Data.SqlClient.RunBehavior runBehavior, System.Boolean returnStream, System.String method) [0x0000b] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x0003c] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.ExecuteReader () [0x0000e] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SqlClient.SqlCommand.ExecuteReader()
+  at JogadorController.CheckPlayer (System.String usuario, System.String senha) [0x00087] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/Controllers/JogadorController.cs:41 
+  at Login.VerficarJogador (System.String usuario, System.String senha) [0x0000b] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/Login/Login.cs:52 
+--------------------------------------------------
+Data e Hora: 22/02/2025 14:54:30
+Mensagem de Erro: ExecuteReader requires an open and available Connection. The connection's current state is closed.
+Stack Trace:   at System.Data.SqlClient.SqlCommand.ValidateCommand (System.Boolean async, System.String method) [0x00063] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.RunExecuteReader (System.Data.CommandBehavior cmdBehavior, System.Data.SqlClient.RunBehavior runBehavior, System.Boolean returnStream, System.Threading.Tasks.TaskCompletionSource`1[TResult] completion, System.Int32 timeout, System.Threading.Tasks.Task& task, System.Boolean asyncWrite, System.String method) [0x0001b] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.RunExecuteReader (System.Data.CommandBehavior cmdBehavior, System.Data.SqlClient.RunBehavior runBehavior, System.Boolean returnStream, System.String method) [0x0000b] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x0003c] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.ExecuteReader () [0x0000e] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SqlClient.SqlCommand.ExecuteReader()
+  at JogadorController.CheckPlayer (System.String usuario, System.String senha) [0x0008a] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/Controllers/JogadorController.cs:41 
+  at Login.VerficarJogador (System.String usuario, System.String senha) [0x0000e] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/Login/Login.cs:52 
+--------------------------------------------------
+Data e Hora: 22/02/2025 14:55:26
+Mensagem de Erro: ExecuteReader requires an open and available Connection. The connection's current state is closed.
+Stack Trace:   at System.Data.SqlClient.SqlCommand.ValidateCommand (System.Boolean async, System.String method) [0x00063] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.RunExecuteReader (System.Data.CommandBehavior cmdBehavior, System.Data.SqlClient.RunBehavior runBehavior, System.Boolean returnStream, System.Threading.Tasks.TaskCompletionSource`1[TResult] completion, System.Int32 timeout, System.Threading.Tasks.Task& task, System.Boolean asyncWrite, System.String method) [0x0001b] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.RunExecuteReader (System.Data.CommandBehavior cmdBehavior, System.Data.SqlClient.RunBehavior runBehavior, System.Boolean returnStream, System.String method) [0x0000b] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x0003c] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.ExecuteReader () [0x0000e] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SqlClient.SqlCommand.ExecuteReader()
+  at JogadorController.CheckPlayer (System.String usuario, System.String senha) [0x0008a] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/Controllers/JogadorController.cs:41 
+  at Login.VerficarJogador (System.String usuario, System.String senha) [0x0000e] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/Login/Login.cs:52 
+--------------------------------------------------
+Data e Hora: 22/02/2025 14:55:49
+Mensagem de Erro: ExecuteReader requires an open and available Connection. The connection's current state is closed.
+Stack Trace:   at System.Data.SqlClient.SqlCommand.ValidateCommand (System.Boolean async, System.String method) [0x00063] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.RunExecuteReader (System.Data.CommandBehavior cmdBehavior, System.Data.SqlClient.RunBehavior runBehavior, System.Boolean returnStream, System.Threading.Tasks.TaskCompletionSource`1[TResult] completion, System.Int32 timeout, System.Threading.Tasks.Task& task, System.Boolean asyncWrite, System.String method) [0x0001b] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.RunExecuteReader (System.Data.CommandBehavior cmdBehavior, System.Data.SqlClient.RunBehavior runBehavior, System.Boolean returnStream, System.String method) [0x0000b] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x0003c] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.ExecuteReader () [0x0000e] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SqlClient.SqlCommand.ExecuteReader()
+  at JogadorController.CheckPlayer (System.String usuario, System.String senha) [0x0008a] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/Controllers/JogadorController.cs:41 
+  at Login.VerficarJogador (System.String usuario, System.String senha) [0x0000e] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/Login/Login.cs:52 
+--------------------------------------------------
+Data e Hora: 22/02/2025 14:55:49
+Mensagem de Erro: ExecuteReader requires an open and available Connection. The connection's current state is closed.
+Stack Trace:   at System.Data.SqlClient.SqlCommand.ValidateCommand (System.Boolean async, System.String method) [0x00063] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.RunExecuteReader (System.Data.CommandBehavior cmdBehavior, System.Data.SqlClient.RunBehavior runBehavior, System.Boolean returnStream, System.Threading.Tasks.TaskCompletionSource`1[TResult] completion, System.Int32 timeout, System.Threading.Tasks.Task& task, System.Boolean asyncWrite, System.String method) [0x0001b] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.RunExecuteReader (System.Data.CommandBehavior cmdBehavior, System.Data.SqlClient.RunBehavior runBehavior, System.Boolean returnStream, System.String method) [0x0000b] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x0003c] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.ExecuteReader () [0x0000e] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SqlClient.SqlCommand.ExecuteReader()
+  at JogadorController.CheckPlayer (System.String usuario, System.String senha) [0x0008a] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/Controllers/JogadorController.cs:41 
+  at Login.VerficarJogador (System.String usuario, System.String senha) [0x0000e] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/Login/Login.cs:52 
+--------------------------------------------------
+Data e Hora: 22/02/2025 14:55:50
+Mensagem de Erro: ExecuteReader requires an open and available Connection. The connection's current state is closed.
+Stack Trace:   at System.Data.SqlClient.SqlCommand.ValidateCommand (System.Boolean async, System.String method) [0x00063] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.RunExecuteReader (System.Data.CommandBehavior cmdBehavior, System.Data.SqlClient.RunBehavior runBehavior, System.Boolean returnStream, System.Threading.Tasks.TaskCompletionSource`1[TResult] completion, System.Int32 timeout, System.Threading.Tasks.Task& task, System.Boolean asyncWrite, System.String method) [0x0001b] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.RunExecuteReader (System.Data.CommandBehavior cmdBehavior, System.Data.SqlClient.RunBehavior runBehavior, System.Boolean returnStream, System.String method) [0x0000b] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x0003c] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.ExecuteReader () [0x0000e] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SqlClient.SqlCommand.ExecuteReader()
+  at JogadorController.CheckPlayer (System.String usuario, System.String senha) [0x0008a] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/Controllers/JogadorController.cs:41 
+  at Login.VerficarJogador (System.String usuario, System.String senha) [0x0000e] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/Login/Login.cs:52 
+--------------------------------------------------
+Data e Hora: 22/02/2025 15:58:47
+Mensagem de Erro: Object reference not set to an instance of an object
+Stack Trace:   at Login.VerficarJogador (System.String usuario, System.String senha) [0x00013] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/Login/Login.cs:57 
+--------------------------------------------------
+Data e Hora: 23/02/2025 08:31:49
+Erro ao conectar ao banco de dados: Keyword not supported: 'set'.
+Stack Trace:   at System.Data.Common.DbConnectionOptions.ParseInternal (System.Collections.Generic.Dictionary`2[TKey,TValue] parsetable, System.String connectionString, System.Boolean buildChain, System.Collections.Generic.Dictionary`2[TKey,TValue] synonyms, System.Boolean firstKey) [0x0005f] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.Common.DbConnectionOptions..ctor (System.String connectionString, System.Collections.Generic.Dictionary`2[TKey,TValue] synonyms) [0x00030] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnectionString..ctor (System.String connectionString) [0x00007] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnectionFactory.CreateConnectionOptions (System.String connectionString, System.Data.Common.DbConnectionOptions previous) [0x00000] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup (System.Data.Common.DbConnectionPoolKey key, System.Data.ProviderBase.DbConnectionPoolGroupOptions poolOptions, System.Data.Common.DbConnectionOptions& userConnectionOptions) [0x0003e] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnection.ConnectionString_Set (System.Data.Common.DbConnectionPoolKey key) [0x00008] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnection.set_ConnectionString (System.String value) [0x00042] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnection..ctor (System.String connectionString) [0x00006] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SqlClient.SqlConnection..ctor(string)
+  at NewConnectDB.conectar () [0x0000f] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/NewConnectDB.cs:37 
+--------------------------------------------------
+Data e Hora: 23/02/2025 08:31:49
+Mensagem de Erro: ExecuteReader: Connection property has not been initialized.
+Stack Trace:   at System.Data.SqlClient.SqlCommand.ValidateCommand (System.Boolean async, System.String method) [0x0000e] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.RunExecuteReader (System.Data.CommandBehavior cmdBehavior, System.Data.SqlClient.RunBehavior runBehavior, System.Boolean returnStream, System.Threading.Tasks.TaskCompletionSource`1[TResult] completion, System.Int32 timeout, System.Threading.Tasks.Task& task, System.Boolean asyncWrite, System.String method) [0x0001b] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.RunExecuteReader (System.Data.CommandBehavior cmdBehavior, System.Data.SqlClient.RunBehavior runBehavior, System.Boolean returnStream, System.String method) [0x0000b] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x0003c] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.ExecuteReader () [0x0000e] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SqlClient.SqlCommand.ExecuteReader()
+  at JogadorController.CheckPlayer (System.String usuario, System.String senha) [0x00087] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/Controllers/JogadorController.cs:41 
+  at Login.VerficarJogador (System.String usuario, System.String senha) [0x0000b] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/Login/Login.cs:55 
+--------------------------------------------------
+Data e Hora: 23/02/2025 08:31:50
+Erro ao conectar ao banco de dados: Keyword not supported: 'set'.
+Stack Trace:   at System.Data.Common.DbConnectionOptions.ParseInternal (System.Collections.Generic.Dictionary`2[TKey,TValue] parsetable, System.String connectionString, System.Boolean buildChain, System.Collections.Generic.Dictionary`2[TKey,TValue] synonyms, System.Boolean firstKey) [0x0005f] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.Common.DbConnectionOptions..ctor (System.String connectionString, System.Collections.Generic.Dictionary`2[TKey,TValue] synonyms) [0x00030] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnectionString..ctor (System.String connectionString) [0x00007] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnectionFactory.CreateConnectionOptions (System.String connectionString, System.Data.Common.DbConnectionOptions previous) [0x00000] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup (System.Data.Common.DbConnectionPoolKey key, System.Data.ProviderBase.DbConnectionPoolGroupOptions poolOptions, System.Data.Common.DbConnectionOptions& userConnectionOptions) [0x0003e] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnection.ConnectionString_Set (System.Data.Common.DbConnectionPoolKey key) [0x00008] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnection.set_ConnectionString (System.String value) [0x00042] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnection..ctor (System.String connectionString) [0x00006] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SqlClient.SqlConnection..ctor(string)
+  at NewConnectDB.conectar () [0x0000f] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/NewConnectDB.cs:37 
+--------------------------------------------------
+Data e Hora: 23/02/2025 08:31:50
+Mensagem de Erro: ExecuteReader: Connection property has not been initialized.
+Stack Trace:   at System.Data.SqlClient.SqlCommand.ValidateCommand (System.Boolean async, System.String method) [0x0000e] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.RunExecuteReader (System.Data.CommandBehavior cmdBehavior, System.Data.SqlClient.RunBehavior runBehavior, System.Boolean returnStream, System.Threading.Tasks.TaskCompletionSource`1[TResult] completion, System.Int32 timeout, System.Threading.Tasks.Task& task, System.Boolean asyncWrite, System.String method) [0x0001b] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.RunExecuteReader (System.Data.CommandBehavior cmdBehavior, System.Data.SqlClient.RunBehavior runBehavior, System.Boolean returnStream, System.String method) [0x0000b] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x0003c] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.ExecuteReader () [0x0000e] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SqlClient.SqlCommand.ExecuteReader()
+  at JogadorController.CheckPlayer (System.String usuario, System.String senha) [0x00087] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/Controllers/JogadorController.cs:41 
+  at Login.VerficarJogador (System.String usuario, System.String senha) [0x0000b] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/Login/Login.cs:55 
+--------------------------------------------------
+Data e Hora: 23/02/2025 08:31:50
+Erro ao conectar ao banco de dados: Keyword not supported: 'set'.
+Stack Trace:   at System.Data.Common.DbConnectionOptions.ParseInternal (System.Collections.Generic.Dictionary`2[TKey,TValue] parsetable, System.String connectionString, System.Boolean buildChain, System.Collections.Generic.Dictionary`2[TKey,TValue] synonyms, System.Boolean firstKey) [0x0005f] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.Common.DbConnectionOptions..ctor (System.String connectionString, System.Collections.Generic.Dictionary`2[TKey,TValue] synonyms) [0x00030] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnectionString..ctor (System.String connectionString) [0x00007] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnectionFactory.CreateConnectionOptions (System.String connectionString, System.Data.Common.DbConnectionOptions previous) [0x00000] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup (System.Data.Common.DbConnectionPoolKey key, System.Data.ProviderBase.DbConnectionPoolGroupOptions poolOptions, System.Data.Common.DbConnectionOptions& userConnectionOptions) [0x0003e] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnection.ConnectionString_Set (System.Data.Common.DbConnectionPoolKey key) [0x00008] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnection.set_ConnectionString (System.String value) [0x00042] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnection..ctor (System.String connectionString) [0x00006] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SqlClient.SqlConnection..ctor(string)
+  at NewConnectDB.conectar () [0x0000f] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/NewConnectDB.cs:37 
+--------------------------------------------------
+Data e Hora: 23/02/2025 08:31:50
+Mensagem de Erro: ExecuteReader: Connection property has not been initialized.
+Stack Trace:   at System.Data.SqlClient.SqlCommand.ValidateCommand (System.Boolean async, System.String method) [0x0000e] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.RunExecuteReader (System.Data.CommandBehavior cmdBehavior, System.Data.SqlClient.RunBehavior runBehavior, System.Boolean returnStream, System.Threading.Tasks.TaskCompletionSource`1[TResult] completion, System.Int32 timeout, System.Threading.Tasks.Task& task, System.Boolean asyncWrite, System.String method) [0x0001b] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.RunExecuteReader (System.Data.CommandBehavior cmdBehavior, System.Data.SqlClient.RunBehavior runBehavior, System.Boolean returnStream, System.String method) [0x0000b] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x0003c] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.ExecuteReader () [0x0000e] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SqlClient.SqlCommand.ExecuteReader()
+  at JogadorController.CheckPlayer (System.String usuario, System.String senha) [0x00087] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/Controllers/JogadorController.cs:41 
+  at Login.VerficarJogador (System.String usuario, System.String senha) [0x0000b] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/Login/Login.cs:55 
+--------------------------------------------------
+Data e Hora: 23/02/2025 08:31:50
+Erro ao conectar ao banco de dados: Keyword not supported: 'set'.
+Stack Trace:   at System.Data.Common.DbConnectionOptions.ParseInternal (System.Collections.Generic.Dictionary`2[TKey,TValue] parsetable, System.String connectionString, System.Boolean buildChain, System.Collections.Generic.Dictionary`2[TKey,TValue] synonyms, System.Boolean firstKey) [0x0005f] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.Common.DbConnectionOptions..ctor (System.String connectionString, System.Collections.Generic.Dictionary`2[TKey,TValue] synonyms) [0x00030] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnectionString..ctor (System.String connectionString) [0x00007] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnectionFactory.CreateConnectionOptions (System.String connectionString, System.Data.Common.DbConnectionOptions previous) [0x00000] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup (System.Data.Common.DbConnectionPoolKey key, System.Data.ProviderBase.DbConnectionPoolGroupOptions poolOptions, System.Data.Common.DbConnectionOptions& userConnectionOptions) [0x0003e] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnection.ConnectionString_Set (System.Data.Common.DbConnectionPoolKey key) [0x00008] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnection.set_ConnectionString (System.String value) [0x00042] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnection..ctor (System.String connectionString) [0x00006] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SqlClient.SqlConnection..ctor(string)
+  at NewConnectDB.conectar () [0x0000f] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/NewConnectDB.cs:37 
+--------------------------------------------------
+Data e Hora: 23/02/2025 08:31:50
+Mensagem de Erro: ExecuteReader: Connection property has not been initialized.
+Stack Trace:   at System.Data.SqlClient.SqlCommand.ValidateCommand (System.Boolean async, System.String method) [0x0000e] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.RunExecuteReader (System.Data.CommandBehavior cmdBehavior, System.Data.SqlClient.RunBehavior runBehavior, System.Boolean returnStream, System.Threading.Tasks.TaskCompletionSource`1[TResult] completion, System.Int32 timeout, System.Threading.Tasks.Task& task, System.Boolean asyncWrite, System.String method) [0x0001b] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.RunExecuteReader (System.Data.CommandBehavior cmdBehavior, System.Data.SqlClient.RunBehavior runBehavior, System.Boolean returnStream, System.String method) [0x0000b] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x0003c] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.ExecuteReader () [0x0000e] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SqlClient.SqlCommand.ExecuteReader()
+  at JogadorController.CheckPlayer (System.String usuario, System.String senha) [0x00087] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/Controllers/JogadorController.cs:41 
+  at Login.VerficarJogador (System.String usuario, System.String senha) [0x0000b] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/Login/Login.cs:55 
+--------------------------------------------------
+Data e Hora: 23/02/2025 08:31:50
+Erro ao conectar ao banco de dados: Keyword not supported: 'set'.
+Stack Trace:   at System.Data.Common.DbConnectionOptions.ParseInternal (System.Collections.Generic.Dictionary`2[TKey,TValue] parsetable, System.String connectionString, System.Boolean buildChain, System.Collections.Generic.Dictionary`2[TKey,TValue] synonyms, System.Boolean firstKey) [0x0005f] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.Common.DbConnectionOptions..ctor (System.String connectionString, System.Collections.Generic.Dictionary`2[TKey,TValue] synonyms) [0x00030] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnectionString..ctor (System.String connectionString) [0x00007] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnectionFactory.CreateConnectionOptions (System.String connectionString, System.Data.Common.DbConnectionOptions previous) [0x00000] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup (System.Data.Common.DbConnectionPoolKey key, System.Data.ProviderBase.DbConnectionPoolGroupOptions poolOptions, System.Data.Common.DbConnectionOptions& userConnectionOptions) [0x0003e] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnection.ConnectionString_Set (System.Data.Common.DbConnectionPoolKey key) [0x00008] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnection.set_ConnectionString (System.String value) [0x00042] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnection..ctor (System.String connectionString) [0x00006] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SqlClient.SqlConnection..ctor(string)
+  at NewConnectDB.conectar () [0x0000f] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/NewConnectDB.cs:37 
+--------------------------------------------------
+Data e Hora: 23/02/2025 08:31:50
+Mensagem de Erro: ExecuteReader: Connection property has not been initialized.
+Stack Trace:   at System.Data.SqlClient.SqlCommand.ValidateCommand (System.Boolean async, System.String method) [0x0000e] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.RunExecuteReader (System.Data.CommandBehavior cmdBehavior, System.Data.SqlClient.RunBehavior runBehavior, System.Boolean returnStream, System.Threading.Tasks.TaskCompletionSource`1[TResult] completion, System.Int32 timeout, System.Threading.Tasks.Task& task, System.Boolean asyncWrite, System.String method) [0x0001b] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.RunExecuteReader (System.Data.CommandBehavior cmdBehavior, System.Data.SqlClient.RunBehavior runBehavior, System.Boolean returnStream, System.String method) [0x0000b] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x0003c] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.ExecuteReader () [0x0000e] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SqlClient.SqlCommand.ExecuteReader()
+  at JogadorController.CheckPlayer (System.String usuario, System.String senha) [0x00087] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/Controllers/JogadorController.cs:41 
+  at Login.VerficarJogador (System.String usuario, System.String senha) [0x0000b] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/Login/Login.cs:55 
+--------------------------------------------------
+Data e Hora: 23/02/2025 08:31:56
+Erro ao conectar ao banco de dados: Keyword not supported: 'set'.
+Stack Trace:   at System.Data.Common.DbConnectionOptions.ParseInternal (System.Collections.Generic.Dictionary`2[TKey,TValue] parsetable, System.String connectionString, System.Boolean buildChain, System.Collections.Generic.Dictionary`2[TKey,TValue] synonyms, System.Boolean firstKey) [0x0005f] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.Common.DbConnectionOptions..ctor (System.String connectionString, System.Collections.Generic.Dictionary`2[TKey,TValue] synonyms) [0x00030] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnectionString..ctor (System.String connectionString) [0x00007] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnectionFactory.CreateConnectionOptions (System.String connectionString, System.Data.Common.DbConnectionOptions previous) [0x00000] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup (System.Data.Common.DbConnectionPoolKey key, System.Data.ProviderBase.DbConnectionPoolGroupOptions poolOptions, System.Data.Common.DbConnectionOptions& userConnectionOptions) [0x0003e] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnection.ConnectionString_Set (System.Data.Common.DbConnectionPoolKey key) [0x00008] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnection.set_ConnectionString (System.String value) [0x00042] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnection..ctor (System.String connectionString) [0x00006] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SqlClient.SqlConnection..ctor(string)
+  at NewConnectDB.conectar () [0x0000f] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/NewConnectDB.cs:37 
+--------------------------------------------------
+Data e Hora: 23/02/2025 08:31:56
+Mensagem de Erro: ExecuteReader: Connection property has not been initialized.
+Stack Trace:   at System.Data.SqlClient.SqlCommand.ValidateCommand (System.Boolean async, System.String method) [0x0000e] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.RunExecuteReader (System.Data.CommandBehavior cmdBehavior, System.Data.SqlClient.RunBehavior runBehavior, System.Boolean returnStream, System.Threading.Tasks.TaskCompletionSource`1[TResult] completion, System.Int32 timeout, System.Threading.Tasks.Task& task, System.Boolean asyncWrite, System.String method) [0x0001b] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.RunExecuteReader (System.Data.CommandBehavior cmdBehavior, System.Data.SqlClient.RunBehavior runBehavior, System.Boolean returnStream, System.String method) [0x0000b] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x0003c] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.ExecuteReader () [0x0000e] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SqlClient.SqlCommand.ExecuteReader()
+  at JogadorController.CheckPlayer (System.String usuario, System.String senha) [0x00087] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/Controllers/JogadorController.cs:41 
+  at Login.VerficarJogador (System.String usuario, System.String senha) [0x0000b] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/Login/Login.cs:55 
+--------------------------------------------------
+Data e Hora: 23/02/2025 08:31:56
+Erro ao conectar ao banco de dados: Keyword not supported: 'set'.
+Stack Trace:   at System.Data.Common.DbConnectionOptions.ParseInternal (System.Collections.Generic.Dictionary`2[TKey,TValue] parsetable, System.String connectionString, System.Boolean buildChain, System.Collections.Generic.Dictionary`2[TKey,TValue] synonyms, System.Boolean firstKey) [0x0005f] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.Common.DbConnectionOptions..ctor (System.String connectionString, System.Collections.Generic.Dictionary`2[TKey,TValue] synonyms) [0x00030] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnectionString..ctor (System.String connectionString) [0x00007] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnectionFactory.CreateConnectionOptions (System.String connectionString, System.Data.Common.DbConnectionOptions previous) [0x00000] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup (System.Data.Common.DbConnectionPoolKey key, System.Data.ProviderBase.DbConnectionPoolGroupOptions poolOptions, System.Data.Common.DbConnectionOptions& userConnectionOptions) [0x0003e] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnection.ConnectionString_Set (System.Data.Common.DbConnectionPoolKey key) [0x00008] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnection.set_ConnectionString (System.String value) [0x00042] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnection..ctor (System.String connectionString) [0x00006] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SqlClient.SqlConnection..ctor(string)
+  at NewConnectDB.conectar () [0x0000f] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/NewConnectDB.cs:37 
+--------------------------------------------------
+Data e Hora: 23/02/2025 08:31:56
+Mensagem de Erro: ExecuteReader: Connection property has not been initialized.
+Stack Trace:   at System.Data.SqlClient.SqlCommand.ValidateCommand (System.Boolean async, System.String method) [0x0000e] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.RunExecuteReader (System.Data.CommandBehavior cmdBehavior, System.Data.SqlClient.RunBehavior runBehavior, System.Boolean returnStream, System.Threading.Tasks.TaskCompletionSource`1[TResult] completion, System.Int32 timeout, System.Threading.Tasks.Task& task, System.Boolean asyncWrite, System.String method) [0x0001b] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.RunExecuteReader (System.Data.CommandBehavior cmdBehavior, System.Data.SqlClient.RunBehavior runBehavior, System.Boolean returnStream, System.String method) [0x0000b] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x0003c] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.ExecuteReader () [0x0000e] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SqlClient.SqlCommand.ExecuteReader()
+  at JogadorController.CheckPlayer (System.String usuario, System.String senha) [0x00087] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/Controllers/JogadorController.cs:41 
+  at Login.VerficarJogador (System.String usuario, System.String senha) [0x0000b] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/Login/Login.cs:55 
+--------------------------------------------------
+Data e Hora: 23/02/2025 08:32:54
+Erro ao conectar ao banco de dados: Keyword not supported: 'character set'.
+Stack Trace:   at System.Data.Common.DbConnectionOptions.ParseInternal (System.Collections.Generic.Dictionary`2[TKey,TValue] parsetable, System.String connectionString, System.Boolean buildChain, System.Collections.Generic.Dictionary`2[TKey,TValue] synonyms, System.Boolean firstKey) [0x0005f] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.Common.DbConnectionOptions..ctor (System.String connectionString, System.Collections.Generic.Dictionary`2[TKey,TValue] synonyms) [0x00030] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnectionString..ctor (System.String connectionString) [0x00007] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnectionFactory.CreateConnectionOptions (System.String connectionString, System.Data.Common.DbConnectionOptions previous) [0x00000] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup (System.Data.Common.DbConnectionPoolKey key, System.Data.ProviderBase.DbConnectionPoolGroupOptions poolOptions, System.Data.Common.DbConnectionOptions& userConnectionOptions) [0x0003e] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnection.ConnectionString_Set (System.Data.Common.DbConnectionPoolKey key) [0x00008] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnection.set_ConnectionString (System.String value) [0x00042] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnection..ctor (System.String connectionString) [0x00006] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SqlClient.SqlConnection..ctor(string)
+  at NewConnectDB.conectar () [0x0000f] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/NewConnectDB.cs:37 
+--------------------------------------------------
+Data e Hora: 23/02/2025 08:32:54
+Mensagem de Erro: ExecuteReader: Connection property has not been initialized.
+Stack Trace:   at System.Data.SqlClient.SqlCommand.ValidateCommand (System.Boolean async, System.String method) [0x0000e] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.RunExecuteReader (System.Data.CommandBehavior cmdBehavior, System.Data.SqlClient.RunBehavior runBehavior, System.Boolean returnStream, System.Threading.Tasks.TaskCompletionSource`1[TResult] completion, System.Int32 timeout, System.Threading.Tasks.Task& task, System.Boolean asyncWrite, System.String method) [0x0001b] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.RunExecuteReader (System.Data.CommandBehavior cmdBehavior, System.Data.SqlClient.RunBehavior runBehavior, System.Boolean returnStream, System.String method) [0x0000b] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x0003c] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.ExecuteReader () [0x0000e] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SqlClient.SqlCommand.ExecuteReader()
+  at JogadorController.CheckPlayer (System.String usuario, System.String senha) [0x00087] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/Controllers/JogadorController.cs:41 
+  at Login.VerficarJogador (System.String usuario, System.String senha) [0x0000b] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/Login/Login.cs:55 
+--------------------------------------------------
+Data e Hora: 23/02/2025 08:34:41
+Erro ao conectar ao banco de dados: Keyword not supported: 'character set'.
+Stack Trace:   at System.Data.Common.DbConnectionOptions.ParseInternal (System.Collections.Generic.Dictionary`2[TKey,TValue] parsetable, System.String connectionString, System.Boolean buildChain, System.Collections.Generic.Dictionary`2[TKey,TValue] synonyms, System.Boolean firstKey) [0x0005f] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.Common.DbConnectionOptions..ctor (System.String connectionString, System.Collections.Generic.Dictionary`2[TKey,TValue] synonyms) [0x00030] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnectionString..ctor (System.String connectionString) [0x00007] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnectionFactory.CreateConnectionOptions (System.String connectionString, System.Data.Common.DbConnectionOptions previous) [0x00000] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup (System.Data.Common.DbConnectionPoolKey key, System.Data.ProviderBase.DbConnectionPoolGroupOptions poolOptions, System.Data.Common.DbConnectionOptions& userConnectionOptions) [0x0003e] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnection.ConnectionString_Set (System.Data.Common.DbConnectionPoolKey key) [0x00008] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnection.set_ConnectionString (System.String value) [0x00042] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnection..ctor (System.String connectionString) [0x00006] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SqlClient.SqlConnection..ctor(string)
+  at NewConnectDB.conectar () [0x0000a] in <f60feb10d47f4eee9363aa33534d600b>:0 
+--------------------------------------------------
+Data e Hora: 23/02/2025 08:37:18
+Erro ao conectar ao banco de dados: Keyword not supported: 'character set'.
+Stack Trace:   at System.Data.Common.DbConnectionOptions.ParseInternal (System.Collections.Generic.Dictionary`2[TKey,TValue] parsetable, System.String connectionString, System.Boolean buildChain, System.Collections.Generic.Dictionary`2[TKey,TValue] synonyms, System.Boolean firstKey) [0x0005f] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.Common.DbConnectionOptions..ctor (System.String connectionString, System.Collections.Generic.Dictionary`2[TKey,TValue] synonyms) [0x00030] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnectionString..ctor (System.String connectionString) [0x00007] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnectionFactory.CreateConnectionOptions (System.String connectionString, System.Data.Common.DbConnectionOptions previous) [0x00000] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup (System.Data.Common.DbConnectionPoolKey key, System.Data.ProviderBase.DbConnectionPoolGroupOptions poolOptions, System.Data.Common.DbConnectionOptions& userConnectionOptions) [0x0003e] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnection.ConnectionString_Set (System.Data.Common.DbConnectionPoolKey key) [0x00008] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnection.set_ConnectionString (System.String value) [0x00042] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlConnection..ctor (System.String connectionString) [0x00006] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SqlClient.SqlConnection..ctor(string)
+  at NewConnectDB.conectar () [0x0000f] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/NewConnectDB.cs:37 
+--------------------------------------------------
+Data e Hora: 23/02/2025 08:37:18
+Mensagem de Erro: ExecuteReader: Connection property has not been initialized.
+Stack Trace:   at System.Data.SqlClient.SqlCommand.ValidateCommand (System.Boolean async, System.String method) [0x0000e] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.RunExecuteReader (System.Data.CommandBehavior cmdBehavior, System.Data.SqlClient.RunBehavior runBehavior, System.Boolean returnStream, System.Threading.Tasks.TaskCompletionSource`1[TResult] completion, System.Int32 timeout, System.Threading.Tasks.Task& task, System.Boolean asyncWrite, System.String method) [0x0001b] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.RunExecuteReader (System.Data.CommandBehavior cmdBehavior, System.Data.SqlClient.RunBehavior runBehavior, System.Boolean returnStream, System.String method) [0x0000b] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x0003c] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at System.Data.SqlClient.SqlCommand.ExecuteReader () [0x0000e] in <9284fdf536d143c79bf1b6d4c51133fb>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SqlClient.SqlCommand.ExecuteReader()
+  at JogadorController.CheckPlayer (System.String usuario, System.String senha) [0x00087] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/Controllers/JogadorController.cs:41 
+  at Login.VerficarJogador (System.String usuario, System.String senha) [0x0000b] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/Login/Login.cs:55 
+--------------------------------------------------

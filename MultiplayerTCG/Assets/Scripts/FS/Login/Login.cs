@@ -1,6 +1,8 @@
 using System;
+using System.IO;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
@@ -13,6 +15,8 @@ public class Login : MonoBehaviour
     public Button submitButton;
     public Button criarJogador;
     public GameObject canvaCriarJogador;
+
+    public JogadorVar jogadorVar;
 
     void Start()
     {
@@ -50,12 +54,18 @@ public class Login : MonoBehaviour
         
             jogador = jogadorController.CheckPlayer(usuario, senha);
             
+            jogadorVar.DefineJogador(jogador);
+            
             Mensagem.text = $"Jogador encontrado! COD: {jogador.cod} nome : {jogador.nome}";
+            SceneManager.LoadScene("EscolhaBaralho");
         }
         catch (Exception e)
         {
             
-            Mensagem.text = "Usuario ou senha incorretos!";
+            Mensagem.text = $"Usuario ou senha incorretos! ERRO: {e.Message}";
+            
+            string filePath = "logfile.txt";
+            SaveErrorToFile(e, filePath);
             
             // Console.WriteLine(e);
             // throw;
@@ -63,6 +73,23 @@ public class Login : MonoBehaviour
         
 
     }
-    
+    private void SaveErrorToFile(Exception ex, string filePath)
+    {
+        try
+        {
+            // Criar ou abrir o arquivo para escrita
+            using (StreamWriter writer = new StreamWriter(filePath, true))
+            {
+                writer.WriteLine("Data e Hora: " + DateTime.Now.ToString());
+                writer.WriteLine("Mensagem de Erro: " + ex.Message);
+                writer.WriteLine("Stack Trace: " + ex.StackTrace);
+                writer.WriteLine("--------------------------------------------------");
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.LogError("Não foi possível salvar o erro no arquivo. Detalhes: " + e.Message);
+        }
+    }
     
 }

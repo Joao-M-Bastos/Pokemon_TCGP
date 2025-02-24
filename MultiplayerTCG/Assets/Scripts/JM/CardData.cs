@@ -6,6 +6,7 @@ using UnityEngine;
 public class CardData : ScriptableObject
 {
     public int ID;
+    public int itemID;
     public string cardName;
     public Sprite cardArt;
 }

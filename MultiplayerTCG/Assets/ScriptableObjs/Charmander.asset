@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cce2eeea68fa76848ab8df8fa7aeef9d, type: 3}
-  m_Name: Bulbasaur
+  m_Name: Charizard
   m_EditorClassIdentifier: 
   ID: 7
+  itemID: 0
   cardName: Charmander
   cardArt: {fileID: 21300000, guid: 06ece990629a0ba4982256ea58226471, type: 3}
   PokemonPrefab: {fileID: 3766092281475477859, guid: f4738d9db9c0edf4dbf140fe454710c7, type: 3}
   EnemyPrefab: {fileID: 3766092281475477859, guid: 104e0d46a0ebc464d93596dfb89a8c11, type: 3}
   PokemonID: 0
-  MaxLife: 70
+  MaxLife: 150
   AttackName: 
   AttackDamage: 1
   AttackCost: 2

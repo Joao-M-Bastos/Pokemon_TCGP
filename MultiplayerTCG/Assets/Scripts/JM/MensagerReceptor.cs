@@ -22,6 +22,7 @@ public class MensagerReceptor : MonoBehaviour
         {
             { "StartGame", VerifyWhoStarts },
             { "CadastrarPartida", CadastrarPartida },
+            { "PartidaCadastrada", GetPartidaID },
             { "FinishTurn", ChangeCurrentPlayer },
             { "ReciveAttack", ReciveAttack },
             { "PokemonFainted", GainPoint },
@@ -88,7 +89,18 @@ public class MensagerReceptor : MonoBehaviour
         partida.baralho_01 = paramaters[0];
         partida.baralho_02 = JogadorVar.varInstance.baralho.cod;
 
-        partidaController.CreatePartida(partida);
+        partida = partidaController.CreatePartida(partida);
+
+        int[] i = new int[1];
+        i[0] = partida.cod;
+;       GetPartidaID(i);
+
+        _player.PartidaCadastrada();
+    }
+
+    public void GetPartidaID(int[] partidaCOD)
+    {
+        JogadorVar.varInstance.partidaID = partidaCOD[0];
     }
 
     void ReciveAttack(int[] damage)

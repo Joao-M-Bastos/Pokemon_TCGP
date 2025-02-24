@@ -6,15 +6,20 @@ using System.Collections.Generic;
 public class JogadaController : NewConnectDB
 {
     public Jogada CreateJogada(Jogada jogada)
-    {   
-        string subsql = "SELECT COD FROM ITEM WHERE BARALHO = @BARALHO AND CARTA = @CARTA";
+    {
+        string subsql = "SELECT COD FROM ITEM WHERE COD = @ITEM";
 
         string sql = "INSERT INTO JOGADA (ITEM,BARALHO,CARTA,PARTIDA,LOCAL_CARTA,DANO,ENERGIA) " +
                      $"VALUES (({subsql}), @BARALHO, @CARTA, @PARTIDA, @LOCAL_CARTA, @DANO, @ENERGIA);" +
                      "SELECT SCOPE_IDENTITY() AS COD; ";
         
         cmd = new SqlCommand(sql, conectar());
+
         
+
+        par = new SqlParameter("@ITEM", jogada.item);
+        par.SqlDbType = System.Data.SqlDbType.Int;
+        cmd.Parameters.Add(par);
         par = new SqlParameter("@BARALHO", jogada.baralho);
         par.SqlDbType = System.Data.SqlDbType.Int;
         cmd.Parameters.Add(par);
@@ -35,6 +40,8 @@ public class JogadaController : NewConnectDB
         cmd.Parameters.Add(par);
         
         Debug.Log(sql);
+
+        Debug.Log(jogada.partida);
 
         reader = cmd.ExecuteReader();
         

@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Data.SqlClient;
 using System;
 using System.Collections.Generic;
+using Random = UnityEngine.Random;
 
 public class JogadorController : NewConnectDB
 {
@@ -24,6 +25,29 @@ public class JogadorController : NewConnectDB
         
         reader = cmd.ExecuteReader();
 
+
+        BaralhoController baralhoController = new BaralhoController();
+
+        Baralho baralho = new Baralho();
+        baralho.nome = "Baralho Base";
+        Jogador recemCriado = CheckPlayer(jogador.usuario, jogador.senha);
+        baralho.jogador = recemCriado.cod;
+        baralho.ativo = true;
+
+        baralhoController.CreateBaralho(baralho, out Baralho baralhoID);
+         
+        ItemController itemController = new ItemController();
+
+        Item item = new Item();
+
+        for(int i = 0; i < 10; i++)
+        {
+            item.carta = Random.Range(1,5);
+            item.baralho = baralhoID.cod;
+
+            itemController.AddCardInDack(item);
+        }
+        
     }
 
     public Jogador CheckPlayer(string usuario, string senha){

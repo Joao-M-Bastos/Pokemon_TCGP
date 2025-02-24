@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class BaralhoController : NewConnectDB
 {
-    public void CreateBaralho(Baralho baralho)
+    public void CreateBaralho(Baralho baralho, out Baralho baralhoRetorno)
     {
         string sql = "INSERT INTO BARALHO (NOME,ATIVO, JOGADOR) " +
                      "VALUES (@NOME,@ATIVO, @JOGADOR)";
@@ -25,6 +25,9 @@ public class BaralhoController : NewConnectDB
 
         
         reader = cmd.ExecuteReader();
+
+        List<Baralho> baralhos = GetBaralhos(baralho.jogador);
+        baralhoRetorno = baralhos[0];
     }
 
     public List<Baralho> GetBaralhos(int PlayerID)

@@ -9,6 +9,8 @@ public class JogadorVar : MonoBehaviour
     public Jogador jogador;
     public Baralho baralho;
     public List<Carta> cartas;
+
+    public int partidaID;
     
     void Awake()
     {

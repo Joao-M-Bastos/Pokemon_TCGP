@@ -54,7 +54,7 @@ public class EscolhaBaralhos : MonoBehaviour
         
         jogadorVar.DefineBaralho(deck);
         jogadorVar.cartas = cartas;
-        Debug.Log(cartas[0].nome);
+
         SceneManager.LoadScene("SampleScene");
     }
     

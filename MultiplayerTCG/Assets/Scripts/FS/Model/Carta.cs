@@ -6,6 +6,8 @@ using System.Web;
 public class Carta
 {
     public int cod { get; set; }
+
+    public int itemCod {  get; set; }
     public string nome { get; set; }
 
     public string imagem { get; set; }

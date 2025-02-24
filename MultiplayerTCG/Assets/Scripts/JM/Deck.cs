@@ -51,6 +51,9 @@ public class Deck : MonoBehaviour
             pokemon.PokemonPrefab = baseCard.PokemonPrefab;
 
             pokemon.ID = cardsInDeck[i].cod;
+
+            pokemon.itemID = cardsInDeck[i].itemCod;
+
             pokemon.cardName = cardsInDeck[i].nome;
             pokemon.cardArt = baseCard.cardArt;
             

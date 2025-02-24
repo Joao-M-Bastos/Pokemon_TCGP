@@ -90,20 +90,13 @@ public class PlayerController : MonoBehaviour
         if (!IsMyTurn)
             return;
 
-        UseCard(cardUsed.Data, out bool isCardPlayed, out int boardID);
-
-
-        if (isCardPlayed)
-        {
-            Debug.Log("Pokemon " + cardUsed.Data.cardName + " played");
-            _hand.RemoveCardFromHand(cardUsed);
-        }
+        TryUseCard(cardUsed);
     }
 
-    public void UseCard(CardData data, out bool isCardPlayed, out int OboardID)
+    public void TryUseCard(Card cardUsed)
     {
-        isCardPlayed = false;
-        OboardID = -1;
+        CardData data = cardUsed.Data;
+        bool isCardPlayed = false;
 
         if (data.GetType() == ScriptableObject.CreateInstance<PokemonData>().GetType())
         {
@@ -111,10 +104,15 @@ public class PlayerController : MonoBehaviour
 
             _board.PlayPokemon(pokemon, out bool isPokemonPlayed, out int boardID);
 
-            OboardID = boardID;
+            CadastraJogada(data, boardID, -1, -1);
+
+            Debug.Log("Pokemon " + data.cardName + " played");
 
             isCardPlayed = isPokemonPlayed;
         }
+
+        if(isCardPlayed)
+            _hand.RemoveCardFromHand(cardUsed);
     }
     #endregion
 
@@ -133,12 +131,14 @@ public class PlayerController : MonoBehaviour
         if (!_energyUsed)
         {
             slotClicked.AddEnergy(out bool energyAddedSuccessfuly);
+            CadastraJogada(slotClicked.CurrentPokemonData, slotClicked.SlotID, 1,-1);
             _mensagerSender.SendMensageToServer("EnergyAdded:" + slotClicked.SlotID + "," + slotClicked.HowMuckEnergy() + ";");
             _energyUsed = energyAddedSuccessfuly;
             return;
         }
 
         if(!_attacked && slotClicked.IsActiveSlot(out int damage) && slotClicked.HasEnergyToAttack()){
+            CadastraJogada(slotClicked.CurrentPokemonData, slotClicked.SlotID, -1, damage);
             _mensagerSender.SendMensageToServer("ReciveAttack:"+damage + ";");
             _attacked = true;
         }
@@ -192,5 +192,56 @@ public class PlayerController : MonoBehaviour
     public void CadastrarPartida()
     {
         _mensagerSender.SendMensageToServer("CadastrarPartida:" + JogadorVar.varInstance.baralho.cod + ";");
+    }
+
+    public void PartidaCadastrada()
+    {
+        _mensagerSender.SendMensageToServer("PartidaCadastrada:" + JogadorVar.varInstance.partidaID + ";");
+    }
+
+    public void CadastraJogada(CardData cardData, int localCarta, int energia, int dano)
+    {
+        Jogada novaJogada = new Jogada();
+
+        novaJogada.item = cardData.itemID;
+
+        novaJogada.baralho = JogadorVar.varInstance.baralho.cod;
+        novaJogada.carta = cardData.ID;
+        novaJogada.partida = JogadorVar.varInstance.partidaID;
+
+        novaJogada.local_carta = localCarta;
+
+        novaJogada.energia = energia;
+        novaJogada.dano = dano;
+
+        JogadaController jogadaController = new JogadaController();
+
+        novaJogada = jogadaController.CreateJogada(novaJogada);
+
+        if (dano != -1)
+        {
+            Acao acao = new Acao();
+
+            acao.jogada = novaJogada.cod;
+            acao.alvo = 0;
+            acao.valor_efeito = dano;
+            acao.efeito = "Causou " + dano + " no campo ativo do adversario";
+
+            AcaoController acaoController = new AcaoController();
+            acaoController.CreateAcao(acao);
+        }
+
+        if (dano == -1 && energia == -1)
+        {
+            Acao acao = new Acao();
+
+            acao.jogada = novaJogada.cod;
+            acao.alvo = localCarta;
+            acao.valor_efeito = 0;
+            acao.efeito = "Jogou pokemon " + cardData.ID + " no campo " + localCarta;
+
+            AcaoController acaoController = new AcaoController();
+            acaoController.CreateAcao(acao);
+        }
     }
 }

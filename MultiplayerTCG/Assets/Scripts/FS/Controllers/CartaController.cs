@@ -96,6 +96,7 @@ public class CartaController : NewConnectDB
                             " C.EFEITO," +
                             " C.ESTAGIO," +
                             " C.TIPO," +
+                            " I.COD as COD_ITEM," +
                             " T.NOME AS NOME_TIPO";
         
         string sql = $"SELECT {sqlColluns} FROM CARTA AS C JOIN ITEM I ON I.CARTA = C.COD JOIN BARALHO B ON I.BARALHO = B.COD JOIN TIPO T ON T.COD = C.TIPO WHERE B.COD = @BARALHOCOD";
@@ -113,6 +114,9 @@ public class CartaController : NewConnectDB
             Carta carta = new Carta();
             
             carta.cod = Convert.ToInt32(reader["COD"]);
+
+            carta.itemCod = Convert.ToInt32(reader["COD_ITEM"]);
+
             carta.nome = reader["NOME"].ToString();
             carta.imagem = reader["IMAGEM"].ToString();
             carta.hp = Convert.ToInt32(reader["HP"]);

@@ -401,3 +401,7 @@ Stack Trace:   at System.Text.Encoding.GetEncoding (System.Int32 codepage) [0x00
   at NewConnectDB.ConverToUTF8 (System.String input) [0x00001] in C:\Facul\7Periodo\MultiPlayer\G_MultiplayerTCG\Pokemon_TCGP\MultiplayerTCG\Assets\Scripts\FS\NewConnectDB.cs:53 
   at NewConnectDB.conectar () [0x00013] in C:\Facul\7Periodo\MultiPlayer\G_MultiplayerTCG\Pokemon_TCGP\MultiplayerTCG\Assets\Scripts\FS\NewConnectDB.cs:37 
 --------------------------------------------------
+Data e Hora: 24/02/2025 12:58:08
+Mensagem de Erro: Object reference not set to an instance of an object
+Stack Trace:   at Login.VerficarJogador (System.String usuario, System.String senha) [0x0001f] in C:\Facul\7Periodo\MultiPlayer\G_MultiplayerTCG\Pokemon_TCGP\MultiplayerTCG\Assets\Scripts\FS\Login\Login.cs:59 
+--------------------------------------------------

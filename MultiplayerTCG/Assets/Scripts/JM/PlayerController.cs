@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
@@ -187,5 +188,9 @@ public class PlayerController : MonoBehaviour
     {
         _enemyBoard.SetLife(i[0], i[1]);
     }
-    
+
+    public void CadastrarPartida()
+    {
+        _mensagerSender.SendMensageToServer("CadastrarPartida:" + JogadorVar.varInstance.baralho.cod + ";");
+    }
 }

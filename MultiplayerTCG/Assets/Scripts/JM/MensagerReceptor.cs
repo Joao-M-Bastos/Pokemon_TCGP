@@ -13,11 +13,15 @@ public class MensagerReceptor : MonoBehaviour
 
     private Dictionary<string, Action<int[]>> commands;
 
+    PartidaController partidaController;
+
     public void Start()
     {
+        partidaController = new PartidaController();
         commands = new Dictionary<string, Action<int[]>>
         {
-            { "StartTurn", VerifyWhoStarts },
+            { "StartGame", VerifyWhoStarts },
+            { "CadastrarPartida", CadastrarPartida },
             { "FinishTurn", ChangeCurrentPlayer },
             { "ReciveAttack", ReciveAttack },
             { "PokemonFainted", GainPoint },
@@ -66,10 +70,25 @@ public class MensagerReceptor : MonoBehaviour
 
     void VerifyWhoStarts(int[] parameters)
     {
-        if (parameters[0]==0)
+
+
+        if (parameters[0] == 0)
             _turnManager.StartGame(true);
         else
+        {
+            _player.CadastrarPartida();
             _turnManager.StartGame(false);
+        }
+    }
+
+    void CadastrarPartida(int[] paramaters)
+    {
+        Partida partida = new Partida();
+
+        partida.baralho_01 = paramaters[0];
+        partida.baralho_02 = JogadorVar.varInstance.baralho.cod;
+
+        partidaController.CreatePartida(partida);
     }
 
     void ReciveAttack(int[] damage)

@@ -58,7 +58,6 @@ public class Client : MonoBehaviour
 
     void OnDataReceived(IAsyncResult ar)
     {
-        
         byte[] buffer = (byte[])ar.AsyncState;
         int bytesRead = stream.EndRead(ar);
         string response = Encoding.ASCII.GetString(buffer, 0, bytesRead);

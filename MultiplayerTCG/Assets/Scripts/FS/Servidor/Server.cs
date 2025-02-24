@@ -21,11 +21,6 @@ public class Server : MonoBehaviour
     {
         partidaController = new PartidaController();
 
-        commands = new Dictionary<string, Action<int[]>>
-        {
-            { "PlayerEntered", PlayerEntered }
-        };
-
         server = new TcpListener(IPAddress.Any, 7777);
         server.Start();
         Debug.Log("Server started on port 7777");
@@ -37,8 +32,7 @@ public class Server : MonoBehaviour
         TcpClient client = server.EndAcceptTcpClient(ar);
         Debug.Log("Client connected");
 
-        Debug.Log(player1);
-        Debug.Log(player2);
+
         if (player1 == null)
         {
             player1 = client;
@@ -51,6 +45,8 @@ public class Server : MonoBehaviour
         {
             player2 = client;
             Debug.Log("Player 2 connected");
+
+            StartGame();
             //SendMessageToClient(player2, "Player 2");
         }
 
@@ -66,16 +62,16 @@ public class Server : MonoBehaviour
     private void StartGame()
     {
         int coinFlip = Random.Range(0,2);
-        
+
         if (coinFlip == 0)
         {
-            SendMessageToClient(player1, "StartTurn:0");
-            SendMessageToClient(player2, "StartTurn:1");
+            SendMessageToClient(player1, "StartGame:0");
+            SendMessageToClient(player2, "StartGame:1");
         }
         else
         {
-            SendMessageToClient(player1, "StartTurn:1");
-            SendMessageToClient(player2, "StartTurn:0");
+            SendMessageToClient(player1, "StartGame:1");
+            SendMessageToClient(player2, "StartGame:0");
         }
     }
 
@@ -101,11 +97,6 @@ public class Server : MonoBehaviour
             Debug.Log("Server recebeu mensagem de " + client + ": " + message);
         }
 
-        if (message.Contains("ToServer"))
-        {
-
-        }
-
         // Enviar a mensagem para o outro jogador
         if (client == player1 && player2 != null)
         {
@@ -119,8 +110,6 @@ public class Server : MonoBehaviour
         // Continuar lendo dados do cliente
         stream.BeginRead(buffer, 0, buffer.Length, new AsyncCallback(OnDataReceived), new { client, buffer });
     }
-
-   
 
     public void ReciveMensage(string response)
     {
@@ -138,7 +127,6 @@ public class Server : MonoBehaviour
             for (int i = 0; i < parametersString.Length; i++)
             {
                 parameters[i] = int.Parse(parametersString[i]);
-
             }
 
             if (commands.TryGetValue(command, out Action<int[]> action))
@@ -151,6 +139,7 @@ public class Server : MonoBehaviour
             }
         }
     }
+
 
     private void OnClientDisconnect(TcpClient client)
     {

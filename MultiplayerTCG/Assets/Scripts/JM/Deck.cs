@@ -38,13 +38,11 @@ public class Deck : MonoBehaviour
 
     public void ReciveDataFromDB()
     {
-        List<Carta> cardsInDeck = _cardController.GetCartas(1);
+        List<Carta> cardsInDeck = _cardController.GetCartas(JogadorVar.varInstance.baralho.cod);
 
         int numOfCards = cardsInDeck.Count;
 
         unshuffledCards = new CardData[numOfCards];
-
-        
 
         for (int i = 0; i < numOfCards; i++)
         {

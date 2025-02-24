@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class JogadorVar : MonoBehaviour
 {
+    public static JogadorVar varInstance;
+
     public Jogador jogador;
     public Baralho baralho;
     public List<Carta> cartas;
     
     void Awake()
     {
+        if(varInstance == null)
+            varInstance = this;
+
         DontDestroyOnLoad(gameObject);
     }
 

@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class EnemySlots : MonoBehaviour
 {
     PokemonData CurrentPokemonData;
+    GameObject pokemon;
 
     [SerializeField] Text energyQuantity;
     [SerializeField] Text hp;
@@ -16,7 +17,6 @@ public class EnemySlots : MonoBehaviour
     [SerializeField] GameObject nameCanvas;
 
     int SlotID;
-    bool hasPokemon;
 
     public void UpdateTextEnergy(int value)
     {
@@ -42,13 +42,11 @@ public class EnemySlots : MonoBehaviour
     {
         CurrentPokemonData = pokemonData;
 
-        GameObject newPokemon = Instantiate(CurrentPokemonData.EnemyPrefab, transform);
+        pokemon = Instantiate(CurrentPokemonData.EnemyPrefab, transform);
 
-        SpriteRenderer _spriteRenderer = newPokemon.GetComponent<SpriteRenderer>();
+        SpriteRenderer _spriteRenderer = pokemon.GetComponent<SpriteRenderer>();
 
         _spriteRenderer.sprite = pokemonData.cardArt;
-
-        hasPokemon = true;
     }
 
     public void SetSlotID(int id)
@@ -58,6 +56,17 @@ public class EnemySlots : MonoBehaviour
 
     public bool IsSlotEmpty()
     {
-        return !hasPokemon;
+        return CurrentPokemonData == null;
+    }
+
+    public void RemovePokemon()
+    {
+        CurrentPokemonData = null;
+
+        UpdateTextEnergy(-1);
+        UpdateTextLife(-1);
+        UpdateTextName("");
+
+        Destroy(pokemon);
     }
 }

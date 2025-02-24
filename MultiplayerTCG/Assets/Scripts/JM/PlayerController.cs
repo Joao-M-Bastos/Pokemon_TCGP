@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
@@ -23,10 +24,16 @@ public class PlayerController : MonoBehaviour
 
     public bool IsMyTurn => _isMyTurn;
 
+    public int AmountOfWins;
+
+    JogadaController jogadaController;
+
     #region TurnStuff
 
     public void SetUpPlayer()
+
     {
+        jogadaController = new JogadaController();  
         _playerDeck.StartGame();
         _energyUsed = false;
         _attacked = false;
@@ -69,7 +76,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             onPlayerFinishTurn?.Invoke();
-            _mensagerSender.SendMensageToServer("FinishTurn");
+            _mensagerSender.SendMensageToServer("FinishTurn" + ";");
         }
     }
 
@@ -88,11 +95,7 @@ public class PlayerController : MonoBehaviour
         if (isCardPlayed)
         {
             Debug.Log("Pokemon " + cardUsed.Data.cardName + " played");
-
-            _mensagerSender.SendMensageToServer("PlayedCard:" + boardID + ","+ 0);
-
             _hand.RemoveCardFromHand(cardUsed);
-
         }
     }
 
@@ -118,8 +121,7 @@ public class PlayerController : MonoBehaviour
 
     public void ReciveAttack(int damage) {
         _board.ReciveAttack(damage);
-        _mensagerSender.SendMensageToServer("UpdateLife:" + 0 + "," + _board.Slots[0].HowMuchLife());
-
+        _mensagerSender.SendMensageToServer("UpdateLife:" + 0 + "," + _board.Slots[0].HowMuchLife()+ ";");
     }
 
     public void SlotClicked(BoardSlot slotClicked)
@@ -130,22 +132,51 @@ public class PlayerController : MonoBehaviour
         if (!_energyUsed)
         {
             slotClicked.AddEnergy(out bool energyAddedSuccessfuly);
-            _mensagerSender.SendMensageToServer("EnergyAdded:" + slotClicked.SlotID + "," + slotClicked.HowMuckEnergy());
+            _mensagerSender.SendMensageToServer("EnergyAdded:" + slotClicked.SlotID + "," + slotClicked.HowMuckEnergy() + ";");
             _energyUsed = energyAddedSuccessfuly;
             return;
         }
 
         if(!_attacked && slotClicked.IsActiveSlot(out int damage) && slotClicked.HasEnergyToAttack()){
-            _mensagerSender.SendMensageToServer("ReciveAttack:"+damage);
+            _mensagerSender.SendMensageToServer("ReciveAttack:"+damage + ";");
             _attacked = true;
         }
     }
 
     #endregion
 
+    public void FaintedEnemyPokemon(int slotID)
+    {
+        AmountOfWins++;
+        DrawCard();
+
+        _enemyBoard.RemovePokemonFromSlot(slotID);
+
+        if(AmountOfWins >= 3)
+        {
+            _mensagerSender.SendMensageToServer("BINGO:0" + ";");
+            Win();
+        }
+    }
+
+    public void Loose()
+    {
+        SceneManager.LoadScene("Loose");
+    }
+
+    public void Win()
+    {
+        SceneManager.LoadScene("Win");
+    }
+
     public void PutPokemonOnEnemyBoard(int[] i)
     {
         _enemyBoard.PutPokemon(i[0], i[1]);
+    }
+
+    public void RemovePokemonOnEnemyBoard(int i)
+    {
+        _enemyBoard.RemovePokemonFromSlot(i);
     }
     public void EnemyAddedEnergy(int[] i)
     {

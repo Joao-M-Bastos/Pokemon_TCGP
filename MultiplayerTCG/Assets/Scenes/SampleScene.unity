@@ -4552,6 +4552,7 @@ MonoBehaviour:
   - {fileID: 3394650581979653020}
   - {fileID: 1578454354233778890}
   - {fileID: 641852953892149672}
+  _mensagerSender: {fileID: 1301640981204542429}
 --- !u!114 &1439810815523874447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4819,6 +4820,7 @@ MonoBehaviour:
   _board: {fileID: 1365641986651110461}
   _enemyBoard: {fileID: 1043099013}
   _mensagerSender: {fileID: 1301640981204542429}
+  AmountOfWins: 0
 --- !u!222 &2119790564802454014
 CanvasRenderer:
   m_ObjectHideFlags: 0

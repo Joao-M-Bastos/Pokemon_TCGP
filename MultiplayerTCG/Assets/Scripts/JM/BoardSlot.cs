@@ -6,8 +6,11 @@ using UnityEngine.UI;
 
 public class BoardSlot : MonoBehaviour
 {
-    PokemonData CurrentPokemonData;
-    PokemonScrpt CurrentPokemonInSlot;
+    PokemonData currentPokemonData;
+    [SerializeField] PokemonScrpt currentPokemonInSlot;
+
+    public PokemonData CurrentPokemonData => currentPokemonData;
+    public PokemonScrpt CurrentPokemonInSlot => currentPokemonInSlot;
 
     [SerializeField] Text energyQuantity;
     [SerializeField] GameObject energyCanvas;
@@ -15,51 +18,72 @@ public class BoardSlot : MonoBehaviour
 
     public int SlotID;
 
-    void UpdateTextEnergy()
+     void UpdateTextEnergy()
     {
-        energyCanvas.SetActive(CurrentPokemonInSlot != null);
-        if(CurrentPokemonInSlot != null)
+        energyCanvas.SetActive(currentPokemonInSlot != null);
+        if(currentPokemonInSlot != null)
         {
-            energyQuantity.text = CurrentPokemonInSlot.Energy.ToString();
+            energyQuantity.text = currentPokemonInSlot.Energy.ToString();
         }
 
     }
 
     public int HowMuckEnergy()
     {
-        return CurrentPokemonInSlot.Energy;
+        return currentPokemonInSlot.Energy;
     }
 
     public int HowMuchLife()
     {
-        return CurrentPokemonInSlot.CurrentLife;
+        return currentPokemonInSlot.CurrentLife;
     }
 
     public void AddPokemonToSlot(PokemonData pokemonData)
     {
-        CurrentPokemonData = pokemonData;
+        if(pokemonData == null)
+        {
+            RemovePokemon();
+            return;
+        }
 
-        GameObject newPokemon = Instantiate(CurrentPokemonData.PokemonPrefab, transform);
-        CurrentPokemonInSlot = newPokemon.GetComponent<PokemonScrpt>();
+        currentPokemonData = pokemonData;
 
-        CurrentPokemonInSlot.Inicialize(pokemonData);
+        GameObject newPokemon = Instantiate(currentPokemonData.PokemonPrefab, transform);
+        currentPokemonInSlot = newPokemon.GetComponent<PokemonScrpt>();
+
+        currentPokemonInSlot.Inicialize(pokemonData);
         UpdateTextEnergy();
     }
 
     public void AddPokemonToSlot(PokemonData pokemonData, PokemonScrpt existingPokemon)
     {
-        CurrentPokemonData = pokemonData;
 
-        CurrentPokemonInSlot = existingPokemon;
-        CurrentPokemonInSlot.transform.position = transform.position;
-        CurrentPokemonInSlot.transform.SetParent(transform);
+        if (pokemonData == null || existingPokemon == null)
+        {
+            RemovePokemon();
+            return;
+        }
+
+        currentPokemonData = pokemonData;
+
+        currentPokemonInSlot = existingPokemon;
+        currentPokemonInSlot.transform.position = transform.position;
+        currentPokemonInSlot.transform.SetParent(transform);
+
+        UpdateTextEnergy();
+    }
+
+    public void RemovePokemon()
+    {
+        currentPokemonData = null;
+        currentPokemonInSlot = null;
 
         UpdateTextEnergy();
     }
 
     public bool IsSlotEmpty()
     {
-        return CurrentPokemonInSlot == null;
+        return currentPokemonInSlot == null;
     }
 
     public bool CanAddPokemon(int evolutionID)
@@ -67,23 +91,26 @@ public class BoardSlot : MonoBehaviour
         if (evolutionID == 0)
             return IsSlotEmpty();
 
-        return CurrentPokemonData.PokemonID == evolutionID;
+        return currentPokemonData.PokemonID == evolutionID;
     }
 
     public void PokemonTakeDamage(int amountOfDamage, out bool pokemonDied)
     {
-        CurrentPokemonInSlot.TakeDamage(amountOfDamage, out bool died);
+        currentPokemonInSlot.TakeDamage(amountOfDamage, out bool died);
         pokemonDied = died;
 
-        UpdateTextEnergy();
+        if (pokemonDied)
+        {
+            RemovePokemon();
+        }
     }
 
     public void AddEnergy(out bool added)
     {
         added = false;
-        if (CurrentPokemonInSlot != null)
+        if (currentPokemonInSlot != null)
         {
-            CurrentPokemonInSlot.AddEnergy();
+            currentPokemonInSlot.AddEnergy();
             UpdateTextEnergy();
             added = true;
         }
@@ -91,12 +118,12 @@ public class BoardSlot : MonoBehaviour
 
     public bool HasEnergyToAttack()
     {
-        return CurrentPokemonInSlot.Energy >= CurrentPokemonData.AttackCost;
+        return currentPokemonInSlot.Energy >= currentPokemonData.AttackCost;
     }
 
     public bool IsActiveSlot(out int damage)
     {
-        damage = CurrentPokemonInSlot.Data.AttackDamage;
+        damage = currentPokemonInSlot.Data.AttackDamage;
         return SlotID == 0;
     }
 

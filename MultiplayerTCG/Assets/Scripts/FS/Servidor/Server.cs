@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -11,8 +12,20 @@ public class Server : MonoBehaviour
     private TcpClient player1;
     private TcpClient player2;
 
+    PartidaController partidaController;
+
+    private Dictionary<string, Action<int[]>> commands;
+
+
     void Start()
     {
+        partidaController = new PartidaController();
+
+        commands = new Dictionary<string, Action<int[]>>
+        {
+            { "PlayerEntered", PlayerEntered }
+        };
+
         server = new TcpListener(IPAddress.Any, 7777);
         server.Start();
         Debug.Log("Server started on port 7777");
@@ -24,6 +37,8 @@ public class Server : MonoBehaviour
         TcpClient client = server.EndAcceptTcpClient(ar);
         Debug.Log("Client connected");
 
+        Debug.Log(player1);
+        Debug.Log(player2);
         if (player1 == null)
         {
             player1 = client;
@@ -37,8 +52,6 @@ public class Server : MonoBehaviour
             player2 = client;
             Debug.Log("Player 2 connected");
             //SendMessageToClient(player2, "Player 2");
-
-            StartGame();
         }
 
         // Continuar aceitando mais clientes
@@ -74,17 +87,28 @@ public class Server : MonoBehaviour
 
         NetworkStream stream = client.GetStream();
         int bytesRead = stream.EndRead(ar);
+
+        if (bytesRead == 0) // Client disconnected unexpectedly
+        {
+            OnClientDisconnect(client);
+            return;
+        }
+
         string message = Encoding.ASCII.GetString(buffer, 0, bytesRead);
         
 
         if (message != ""){
-            Debug.Log("Sending message to " + client + ": " + message);
+            Debug.Log("Server recebeu mensagem de " + client + ": " + message);
+        }
+
+        if (message.Contains("ToServer"))
+        {
+
         }
 
         // Enviar a mensagem para o outro jogador
         if (client == player1 && player2 != null)
         {
-            
             SendMessageToClient(player2, message);
         }
         else if (client == player2 && player1 != null)
@@ -94,6 +118,46 @@ public class Server : MonoBehaviour
 
         // Continuar lendo dados do cliente
         stream.BeginRead(buffer, 0, buffer.Length, new AsyncCallback(OnDataReceived), new { client, buffer });
+    }
+
+   
+
+    public void ReciveMensage(string response)
+    {
+
+        string[] partsGerais = response.Split(';');
+
+        foreach (string part in partsGerais)
+        {
+            string[] parts = part.Split(':');
+            string command = parts[0];
+            string[] parametersString = parts.Length > 1 ? parts[1].Split(',') : new string[0];
+
+            int[] parameters = new int[parametersString.Length];
+
+            for (int i = 0; i < parametersString.Length; i++)
+            {
+                parameters[i] = int.Parse(parametersString[i]);
+
+            }
+
+            if (commands.TryGetValue(command, out Action<int[]> action))
+            {
+                action.Invoke(parameters);
+            }
+            else
+            {
+                Debug.LogWarning($"Comando não reconhecido: {command}");
+            }
+        }
+    }
+
+    private void OnClientDisconnect(TcpClient client)
+    {
+        if (client == player1)
+            player1 = null;
+        else
+            player2 = null;
     }
 
     void SendMessageToClient(TcpClient client, string message)

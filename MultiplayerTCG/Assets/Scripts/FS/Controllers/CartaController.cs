@@ -131,5 +131,54 @@ public class CartaController : NewConnectDB
         reader.Close();
         return cartas;
     } 
+
+    public Carta GetCard(int cardcod)
+    {
+        string sqlColluns = " COD, " +
+                            " NOME, " +
+                            " IMAGEM, " +
+                            " HP," +
+                            " ATAQUE_NOME," +
+                            " ATAQUE_CUSTO," +
+                            " ATAQUE_DANO," +
+                            " ATAQUE_EFEITO," +
+                            " RECUO," +
+                            " EFEITO," +
+                            " ESTAGIO," +
+                            " TIPO";
+
+        string sql = $"SELECT {sqlColluns} FROM CARTA WHERE COD = @CARTACOD";
+
+        cmd = new SqlCommand(sql, conectar());
+
+        par = new SqlParameter("@CARTACOD", cardcod);
+        par.SqlDbType = SqlDbType.Int;
+        cmd.Parameters.Add(par);
+
+        SqlDataReader reader = cmd.ExecuteReader();
+
+        if (reader.Read())
+        {
+            Carta carta = new Carta();
+
+            carta.cod = Convert.ToInt32(reader["COD"]);
+            carta.nome = reader["NOME"].ToString();
+            carta.imagem = reader["IMAGEM"].ToString();
+            carta.hp = Convert.ToInt32(reader["HP"]);
+            carta.ataqueNome = reader["ATAQUE_NOME"].ToString();
+            carta.ataqueCusto = Convert.ToInt32(reader["ATAQUE_CUSTO"]);
+            carta.ataqueDano = Convert.ToInt32(reader["ATAQUE_DANO"]);
+            carta.ataqueEfeito = reader["ATAQUE_EFEITO"].ToString();
+            carta.recuo = Convert.ToInt32(reader["RECUO"]);
+            carta.efeito = reader["EFEITO"].ToString();
+            carta.estagio = Convert.ToInt32(reader["ESTAGIO"]);
+            carta.tipo = Convert.ToInt32(reader["TIPO"]);
+
+            return carta;
+        }
+
+        
+        return null;
+    }
     
 }

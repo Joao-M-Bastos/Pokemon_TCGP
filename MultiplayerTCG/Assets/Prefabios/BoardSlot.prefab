@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7061288959988594945
 RectTransform:
   m_ObjectHideFlags: 0
@@ -61,7 +61,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 27
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!114 &6430047902058327464
 MonoBehaviour:
@@ -386,3 +386,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   energyQuantity: {fileID: 1083939615360871491}
   energyCanvas: {fileID: 1006992020209932153}
+  SlotID: 0

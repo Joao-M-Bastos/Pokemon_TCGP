@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Card : MonoBehaviour
 {
@@ -13,11 +14,23 @@ public class Card : MonoBehaviour
     [SerializeField] SpriteRenderer _spriteRenderer;
     [SerializeField] SpriteRenderer _spriteHolvered;
 
+    [SerializeField] Text[] texts;
+
     public void InicializeCard(CardData data)
     {
         _data = data;
         _spriteRenderer.sprite = _data.cardArt;
         _spriteHolvered.sprite = _data.cardArt;
+
+        texts[0].text = _data.cardName;
+        texts[1].text = _data.cardName;
+
+        if (_data.GetType() == ScriptableObject.CreateInstance<PokemonData>().GetType())
+        {
+            PokemonData pokemon = (PokemonData)data;
+            texts[2].text = pokemon.MaxLife.ToString();
+            texts[3].text = pokemon.MaxLife.ToString(); 
+        }
     }
 
     public void SetUsability(bool usability)

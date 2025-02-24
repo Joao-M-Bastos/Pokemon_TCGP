@@ -20,33 +20,42 @@ public class MensagerReceptor : MonoBehaviour
             { "StartTurn", VerifyWhoStarts },
             { "FinishTurn", ChangeCurrentPlayer },
             { "ReciveAttack", ReciveAttack },
-            { "PlayedCard", EnemyPlayedPokemon },
+            { "PokemonFainted", GainPoint },
+            { "RemoveEnemyPokemon", RemovePokemonFromSlot },
+            { "PlayPokemonCard", EnemyPlayedPokemon },
             { "UpdateLife", EnemyPokemonChangedLife },
-            { "EnergyAdded", EnemyAddedEnergy }
+            { "EnergyAdded", EnemyAddedEnergy },
+            { "BINGO", Loose }
         };
     }
 
     public void ReciveMensage(string response)
     {
-        string[] parts = response.Split(':');
-        string command = parts[0];
-        string[] parametersString = parts.Length > 1 ? parts[1].Split(',') : new string[0];
 
-        int[] parameters = new int[parametersString.Length];
-            
-        for (int i = 0; i < parametersString.Length; i++)
-        {
-            parameters[i] = int.Parse(parametersString[i]);
+        string[] partsGerais = response.Split(';');
 
-        }
+        foreach (string part in partsGerais)
+        {
+            string[] parts = part.Split(':');
+            string command = parts[0];
+            string[] parametersString = parts.Length > 1 ? parts[1].Split(',') : new string[0];
 
-        if (commands.TryGetValue(command, out Action<int[]> action))
-        {
-            action.Invoke(parameters);
-        }
-        else
-        {
-            Debug.LogWarning($"Comando não reconhecido: {command}");
+            int[] parameters = new int[parametersString.Length];
+
+            for (int i = 0; i < parametersString.Length; i++)
+            {
+                parameters[i] = int.Parse(parametersString[i]);
+
+            }
+
+            if (commands.TryGetValue(command, out Action<int[]> action))
+            {
+                action.Invoke(parameters);
+            }
+            else
+            {
+                Debug.LogWarning($"Comando não reconhecido: {command}");
+            }
         }
     }
 
@@ -82,4 +91,19 @@ public class MensagerReceptor : MonoBehaviour
     {
         _player.EnemyPokemonChangedLife(parameters);
     }
+
+    public void GainPoint(int[] parameters)
+    {
+        _player.FaintedEnemyPokemon(parameters[0]);
+    }
+    public void RemovePokemonFromSlot(int[] parameters)
+    {
+        _player.RemovePokemonOnEnemyBoard(parameters[0]);
+    }
+
+    public void Loose(int[] parameters)
+    {
+        _player.Loose();
+    }
+
 }

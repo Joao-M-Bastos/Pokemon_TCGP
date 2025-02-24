@@ -76,8 +76,36 @@ public class Client : MonoBehaviour
         stream.BeginRead(buffer, 0, buffer.Length, new AsyncCallback(OnDataReceived), buffer);
     }
 
+    private void OnDisable()
+    {
+        DisconnectFromServer();
+    }
+
     void OnApplicationQuit()
     {
-        client.Close();
+        DisconnectFromServer();
+    }
+
+    public void DisconnectFromServer()
+    {
+        if (client != null)
+        {
+            try
+            {
+                NetworkStream stream = client.GetStream();
+                byte[] disconnectMessage = Encoding.ASCII.GetBytes("Disconnect");
+                stream.Write(disconnectMessage, 0, disconnectMessage.Length);
+                stream.Flush(); // Ensure the message is sent before closing
+            }
+            catch (Exception e)
+            {
+                Debug.Log("Error sending disconnect message: " + e.Message);
+            }
+            finally
+            {
+                client.Close();
+                Debug.Log("Client connection closed.");
+            }
+        }
     }
 }

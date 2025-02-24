@@ -395,3 +395,9 @@ Stack Trace:   at System.Data.SqlClient.SqlCommand.ValidateCommand (System.Boole
   at JogadorController.CheckPlayer (System.String usuario, System.String senha) [0x00087] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/Controllers/JogadorController.cs:41 
   at Login.VerficarJogador (System.String usuario, System.String senha) [0x0000b] in /home/fabio/Documentos/IFRJ/Periodo_3/Multiplayer/Game/Pokemon_TCGP/MultiplayerTCG/Assets/Scripts/FS/Login/Login.cs:55 
 --------------------------------------------------
+Data e Hora: 23/02/2025 17:10:57
+Erro ao conectar ao banco de dados: Encoding 1252 data could not be found. Make sure you have correct international codeset assembly installed and enabled.
+Stack Trace:   at System.Text.Encoding.GetEncoding (System.Int32 codepage) [0x0022d] in <4b234520e36749be9cf6b053d911690f>:0 
+  at NewConnectDB.ConverToUTF8 (System.String input) [0x00001] in C:\Facul\7Periodo\MultiPlayer\G_MultiplayerTCG\Pokemon_TCGP\MultiplayerTCG\Assets\Scripts\FS\NewConnectDB.cs:53 
+  at NewConnectDB.conectar () [0x00013] in C:\Facul\7Periodo\MultiPlayer\G_MultiplayerTCG\Pokemon_TCGP\MultiplayerTCG\Assets\Scripts\FS\NewConnectDB.cs:37 
+--------------------------------------------------

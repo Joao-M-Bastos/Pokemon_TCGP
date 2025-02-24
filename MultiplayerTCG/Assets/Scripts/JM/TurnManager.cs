@@ -9,6 +9,8 @@ public class TurnManager : MonoBehaviour
 
     public PlayerController _player;
 
+    
+
     private void OnEnable()
     {
         PlayerController.onPlayerFinishTurn += ChangePlayer;

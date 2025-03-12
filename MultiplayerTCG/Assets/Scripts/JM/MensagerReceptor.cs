@@ -71,7 +71,8 @@ public class MensagerReceptor : MonoBehaviour
 
     void VerifyWhoStarts(int[] parameters)
     {
-
+        _player.DrawCard();
+        _player.DrawCard();
 
         if (parameters[0] == 0)
             _turnManager.StartGame(true);

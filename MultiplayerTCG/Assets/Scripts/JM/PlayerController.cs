@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour
 
     public int AmountOfWins;
 
+    [SerializeField] GameObject isMyTurn;
+
     JogadaController jogadaController;
 
     #region TurnStuff
@@ -46,7 +48,8 @@ public class PlayerController : MonoBehaviour
         _energyUsed = false;
         _attacked = false;
         DrawCard();
-        
+        isMyTurn.SetActive(_isMyTurn);
+
         _hand.SetHandCardsUsability(_isMyTurn);
     }
 
@@ -66,6 +69,8 @@ public class PlayerController : MonoBehaviour
     {
         
         _isMyTurn = false;
+
+        isMyTurn.SetActive(_isMyTurn);
         _hand.SetHandCardsUsability(_isMyTurn);
     }
 

@@ -29,9 +29,9 @@ public class NewConnectDB
             // SqlConnection conn = new SqlConnection(Encoding.GetEncoding(1252).GetString(conexao));
 
             Debug.Log("Conectado!!!!!!!!!!!!!!!!!!!!!");
-            String conexao = "Data Source=127.0.0.1;" +
-                             "Initial Catalog=POKEMON_2024_02;" +
-                             "User ID=sa;" +
+            String conexao = "Data Source=127.0.0.1;" + //ID do pc (eu acho)
+                             "Initial Catalog=POKEMON_2024_02;" + // nome do banco de dados
+                             "User ID=sa;" + 
                              "Password=SuaSenhaForte123!;";
             
             SqlConnection conn = new SqlConnection(ConverToUTF8(conexao));
